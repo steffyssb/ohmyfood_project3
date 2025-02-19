@@ -1,0 +1,100 @@
+// Base Styles
+@use './variables.scss' as*;
+* {
+  margin: 0px;
+  padding: 0px;
+}
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: $gradient;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeOut 3s forwards;
+}
+
+.loader-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #ccc;
+  border-top: 5px solid #9356DC;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  90%{ opacity: 0.1;}
+  100% { opacity: 0; visibility: hidden; display: none; }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.dish {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s forwards ease-in-out;
+}
+.dish:nth-child(1) { animation-delay: 0.2s; }
+.dish:nth-child(2) { animation-delay: 0.4s; }
+.dish:nth-child(3) { animation-delay: 0.6s; }
+.dish:nth-child(4) { animation-delay: 0.8s; }
+.dish:nth-child(5) { animation-delay: 1s; }
+.dish:nth-child(6) { animation-delay: 1.2s; }
+.dish:nth-child(7) { animation-delay: 1.4s; }
+.dish:nth-child(8) { animation-delay: 1.6s; }
+.dish:nth-child(9) { animation-delay: 1.8s; }
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+body {
+    font-family: $font-body;
+    color: $text-color;
+    background-color: $background-color;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+    font-family: $font-title;
+    color: $text-color;
+    text-align: center;
+  }
+  h3 {
+    font-family: $font-body;
+    color: $text-color;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  button {
+    font-family: $font-body;
+    background: $gradient;
+    color: $background-color;
+    border: none;
+    padding: $spacing-unit;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    max-width: 210px;
+  
+    &:hover {
+      background-color: $secondary-color;
+      transform: scale(1.01);
+    }
+  }
+
