@@ -96,7 +96,7 @@ h3 , p {
         width: 0px;
     }
     100% {
-        width: 55px;
+        width: 50px;
     }
 }
 
@@ -112,12 +112,11 @@ display: inline-block;
     padding-top: 20px;
     padding-bottom: 20px;
     flex-shrink: 0;
-    min-width: 50px;
     color: white;
 }
 .submenu_card:hover .submenu_card--price::after {
     display: inline-block;
-    animation: slideIn 0.3s ease-in-out forwards;
+    animation: slideIn 0.3s ease-out;
 }
 
 .click {
